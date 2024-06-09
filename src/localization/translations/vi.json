@@ -1,0 +1,24 @@
+{
+    "language": "Vietnamese",
+    "screens": {
+        "intro": {
+            "title": "Màn hình giới thiệu",
+            "text": {
+                "introText": "Đây là đoạn giới thiệu bằng tiếng việt",
+                "login": "Đăng nhập",
+                "signup": "Đăng ký"
+            }
+        },
+        "login": {
+            "title": "Đăng nhập",
+            "text": {
+                "login": "Đăng nhập",
+                "emailAddress": "Địa chỉ Email",
+                "password": "mật khẩu",
+                "continue": "tiếp tục",
+                "createAccount": "Tạo tài khoản",
+                "forgotPassword": "Quên mật khẩu?"
+            }
+        },
+    }
+}
