@@ -6,40 +6,28 @@
  */
 
 import React from 'react';
+import { Platform } from 'react-native';
 import './src/localization/i18n';
 import { useTranslation } from 'react-i18next';
-import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
-
-
+import { GluestackUIProvider, Text, SafeAreaView, KeyboardAvoidingView } from '@gluestack-ui/themed';
+import { config } from '@gluestack-ui/config'; // Optional if you want to use default theme
+import LanguageSwitch from './src/components/languageSwitch/LanguageSwitch';
+import NavigationContainer from './src/navigation/NavigationContainer';
 function App(): React.JSX.Element {
   const { t, i18n } = useTranslation();
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.button} onPress={() => i18n.changeLanguage("en")}>
-        <Text>English</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={() => i18n.changeLanguage("fr")}>
-        <Text>French</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={() => i18n.changeLanguage("vi")}>
-        <Text>Vietnam</Text>
-      </TouchableOpacity>
-      <Text>{t("screens.intro.text.introText")}</Text>
-    </View>
+    <GluestackUIProvider config={config}>
+      <SafeAreaView flex={1}>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === "ios" ? "height" : "height"}
+          style={{ flex: 1, zIndex: 999 }}
+        >
+          <LanguageSwitch />
+          <Text>{t('screens.intro.text.introText')}</Text>
+          <NavigationContainer />
+        </KeyboardAvoidingView>
+      </SafeAreaView>
+    </GluestackUIProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    paddingHorizontal: 10,
-  },
-  button: {
-    alignItems: 'center',
-    backgroundColor: '#DDDDDD',
-    padding: 10,
-  }
-});
-
 export default App;
