@@ -1,6 +1,7 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 
-function Home() {
+export default function Home() {
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }
         }>
@@ -8,3 +9,4 @@ function Home() {
                 < /View>
                 );
   }
+
