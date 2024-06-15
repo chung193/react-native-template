@@ -9,25 +9,24 @@ import React from 'react';
 import { Platform } from 'react-native';
 import './src/localization/i18n';
 import { useTranslation } from 'react-i18next';
-import { GluestackUIProvider, Text, SafeAreaView, KeyboardAvoidingView } from '@gluestack-ui/themed';
-import { config } from '@gluestack-ui/config'; // Optional if you want to use default theme
+import { PaperProvider, Text } from 'react-native-paper';
 import LanguageSwitch from './src/components/languageSwitch/LanguageSwitch';
-import NavigationContainer from './src/navigation/NavigationContainer';
+import MainNavigationContainer from './src/navigation/MainNavigationContainer';
+import { KeyboardAvoidingView, SafeAreaView } from 'react-native';
+
 function App(): React.JSX.Element {
   const { t, i18n } = useTranslation();
   return (
-    <GluestackUIProvider config={config}>
+    <PaperProvider>
       <SafeAreaView flex={1}>
         <KeyboardAvoidingView
           behavior={Platform.OS === "ios" ? "height" : "height"}
           style={{ flex: 1, zIndex: 999 }}
         >
-          <LanguageSwitch />
-          <Text>{t('screens.intro.text.introText')}</Text>
-          <NavigationContainer />
+          <MainNavigationContainer />
         </KeyboardAvoidingView>
       </SafeAreaView>
-    </GluestackUIProvider>
+    </PaperProvider>
   );
 }
 export default App;

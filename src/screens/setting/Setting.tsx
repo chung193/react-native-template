@@ -1,11 +1,18 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import * as React from 'react';
+import { List, MD3Colors, Text } from 'react-native-paper';
+import { useTranslation } from 'react-i18next';
 
-export default function Setting() {
+const Setting = () => {
+    const [expanded, setExpanded] = React.useState(true);
+    const handlePress = () => setExpanded(!expanded);
+    const { t } = useTranslation();
+
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }
-        }>
-            <Text>Setting < /Text>
-                < /View>
-                );
-  }
+        <List.Section>
+            <List.Item title={t('screens.setting.item1.text')} left={() => <List.Icon icon="home" />} />
+
+        </List.Section>
+    );
+};
+
+export default Setting;
