@@ -38,9 +38,6 @@ const resources = {
     en: {
         translation: en,
     },
-    fr: {
-        translation: fr,
-    },
     vi: {
         translation: vi,
     },

@@ -1,20 +1,29 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'react-native-paper';
+import { Button, Text, RadioButton } from 'react-native-paper';
+import { View } from 'react-native';
 
 function LanguageSwitch(): React.JSX.Element {
     const { t, i18n } = useTranslation();
+    const [value, setValue] = React.useState(i18n.language);
     return (
         <>
-            <Button fontWeight="$medium" fontSize="$sm" color="$textLight900" onPress={() => i18n.changeLanguage('en')}>
-                English
-            </Button>
-            <Button fontWeight="$medium" fontSize="$sm" color="$textLight900" onPress={() => i18n.changeLanguage('fr')}>
-                French
-            </Button>
-            <Button fontWeight="$medium" fontSize="$sm" color="$textLight900" onPress={() => i18n.changeLanguage('vi')}>
-                Vietnam
-            </Button>
+            <Text>{t('components.languageSwitcher.title')}</Text>
+            <RadioButton.Group onValueChange={
+                newValue => {
+                    setValue(newValue);
+                    i18n.changeLanguage(newValue)
+                }}
+                value={value}>
+                <View>
+                    <Text>Việt Nam</Text>
+                    <RadioButton value="vi" />
+                </View>
+                <View>
+                    <Text>English</Text>
+                    <RadioButton value="en" />
+                </View>
+            </RadioButton.Group>
         </>
     );
 }

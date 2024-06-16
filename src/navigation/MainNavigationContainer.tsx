@@ -8,14 +8,14 @@ import Home from '../screens/home/Home';
 import User from '../screens/user/User';
 const Tab = createBottomTabNavigator();
 
-export default function MainNavigationContainer() {
+export default function MainNavigationContainer(props) {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={props.theme}>
       <Tab.Navigator
         screenOptions={({ route }) => ({
+          headerShown: (route.name === "Setting") ? false : true,
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
-
             if (route.name === 'Home') {
               iconName = focused
                 ? 'home'

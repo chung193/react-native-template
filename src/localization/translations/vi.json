@@ -1,7 +1,16 @@
 {
     "language": "Vietnamese",
+    "components": {
+        "languageSwitcher": {
+            "title": "Ngôn ngữ"
+        },
+        "colorModeSwitcher": {
+            "title": "Giao diện"
+        }
+    },
     "screens": {
-        "setting": {
+        "setting": {},
+        "info": {
             "item1": {
                 "text": "Về chúng tôi",
                 "subtext1": "",

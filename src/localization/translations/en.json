@@ -1,24 +1,54 @@
 {
-    "language": "English",
+    "language": "Vietnamese",
+    "components": {
+        "languageSwitcher": {
+            "title": "Language"
+        },
+        "colorModeSwitcher": {
+            "title": "Display"
+        }
+    },
     "screens": {
-        "intro": {
-            "title": "Intro Screen",
-            "text": {
-                "introText": "This is the intro text in english",
-                "login": "Login",
-                "signup": "Sign Up"
+        "setting": {},
+        "info": {
+            "item1": {
+                "text": "About",
+                "subtext1": "",
+                "subtext2": ""
+            },
+            "item2": {
+                "text": "Term",
+                "subtext1": "",
+                "subtext2": ""
+            },
+            "item3": {
+                "text": "Privacy",
+                "subtext1": "",
+                "subtext2": ""
+            },
+            "item4": {
+                "text": "Góp ý ứng dụng",
+                "subtext1": "Ứng dụng của chúng tôi tốt hơn một phần là nhờ bạn",
+                "subtext2": ""
+            },
+            "item5": {
+                "text": "Liên hệ",
+                "subtext1": "Email:team@vietcatera.com",
+                "subtext2": "SĐT: +84 286 286 2989"
+            },
+            "item6": {
+                "text": "Thông tin pháp lý",
+                "subtext1": "",
+                "subtext2": ""
+            },
+            "item7": {
+                "text": "Cài đặt",
+                "subtext1": "",
+                "subtext2": ""
+            },
+            "footer": {
+                "text": "Phiên bản 1.9.4 Vietcetera 2024. All Rights Reserved."
             }
-        },
-        "login": {
-            "title": "Sign in",
-            "text": {
-                "login": "login",
-                "emailAddress": "Email address",
-                "password": "password",
-                "continue": "Continue",
-                "createAccount": "Create an Account",
-                "forgotPassword": "Forgotten password?"
-            }
-        },
+        }
     }
 }
