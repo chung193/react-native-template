@@ -14,6 +14,8 @@ import LanguageSwitch from './src/components/languageSwitch/LanguageSwitch';
 import MainNavigationContainer from './src/navigation/MainNavigationContainer';
 import { KeyboardAvoidingView, SafeAreaView } from 'react-native';
 import { PreferencesContext } from './PreferencesContext';
+import SplashScreen from 'react-native-splash-screen';
+
 import {
   NavigationContainer,
   DarkTheme as NavigationDarkTheme,
@@ -49,6 +51,9 @@ function App(): React.JSX.Element {
     },
   };
 
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
   const { t, i18n } = useTranslation();
   const [isThemeDark, setIsThemeDark] = React.useState(false);
 
